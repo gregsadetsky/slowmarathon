@@ -1,0 +1,64 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html,
+body {
+  background-color: #ffd139;
+}
+
+.mansalva {
+  font-family: "Mansalva", sans-serif;
+}
+
+h1 {
+  text-shadow: #ffd139 1px 0 10px;
+}
+
+span.superDuper {
+  text-decoration: underline;
+  font-weight: bold;
+  font-style: italic;
+}
+
+p {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+a {
+  color: blue;
+  text-decoration: underline;
+}
+
+div.uploadBox {
+  background: #eef;
+  border: 1px solid grey;
+  padding: 2px;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+div#runners {
+  pointer-events: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+div.runner {
+  position: absolute;
+  opacity: 0.5;
+}
+
+#fileInputContainer {
+  display: -webkit-flex;
+  display: flex;
+  -webkit-align-items: center;
+  align-items: center;
+  justify-content: center;
+}

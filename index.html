@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Slow Marathon</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🐢</text></svg>">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Mansalva&family=Playfair+Display:wght@600&display=swap" rel="stylesheet">
+
+  </head>
+  <body>
+    <div class="container w-full md:max-w-3xl mx-auto">
+      <div id="runners">
+      </div>
+      <div class="border-sketchy-md bg-white p-6 m-3 md:m-8 border shadow mb-4" style="z-index:0; transition: none !important;">
+        <div id="instructions">
+
+          <h1 class="text-6xl font-bold text-center mb-10 mansalva">Slow Marathon</h1>
+          <p class="mt-0">I built this app because 1. I've never run a marathon 2. I try to walk every day 3. my iPhone keeps stats about how much I walk 4. for some reason it doesn't tell me how much I've walked in total, which is actually a lot.</p>
+
+          <p>So... how many Slow Marathons have I or you walked? I built this site so that you could find out - if you have an iPhone and your Health app tracks your distance walked (which, I think, it does by default).</p>
+
+          <p class="bg-slate-200 text-center border border-black py-1 my-5"><b>Super Duper Important Note</b><br/><span class="superDuper">none</span> of your health data <br class="block md:hidden" /><span class="superDuper">ever</span> goes to any server<br/>all of the math is done here, <br class="block md:hidden" />in your browser</p>
+
+          <h2 class="text-3xl mansalva">Let's do it!</h2>
+          <p>
+            1. on your iPhone, go to your Health app (<a href="x-apple-health://">this link should open it</a>)<br/>
+            2. tap your profile icon in the top right corner<br/>
+            3. scroll down and tap "<b>Export All Health Data</b>". then, tap the "<b>Export</b>" button.<br/>
+            4. tap the "<b>Save to Files</b>" option. your file name will be just "export" (you could change it to something more meaningful like "myhealthdata2023")<br/>
+            5. tap the "<b>Save</b>" button in the top right corner<br/>
+            6. on this page, below these instructions, tap the "<b>Choose File</b>" button<br/>
+            8. pick the file you just saved - the one called "export" or whatever you named it
+          </p>
+
+          <div class="bg-cyan-200 text-center border border-black py-2 mt-6 md:pl-0" id="fileInputContainer">
+            <div>
+              <div class="font-bold mb-3 text-sm">Upload your Health app export here</div>
+              <div class="hidden" id="fileError"></div>
+              <div class="hidden" id="fileProcessing">Processing...</div>
+              <input type="file" accept=".zip" class="
+               text-sm text-slate-500
+                    file:mr-4 file:py-2 file:px-4
+                    file:rounded-full file:border-0
+                    file:text-sm file:font-semibold
+                    file:bg-cyan-50 file:text-indigo-700
+                    hover:file:bg-cyan-100
+                    cursor-pointer
+                    file:cursor-pointer
+                    ml-6
+                  "/>
+            </div>
+          </div>
+        </div>
+
+        <div id="results" class="hidden text-center">
+          <h1 class="text-6xl md:text-7xl mansalva">
+              You've walked<br/>
+              <span id="marathons" class="text-8xl"></span><br />
+              Slow Marathons!
+          </h1>
+          <div class="text-sm">(that's <span id="distanceKm"></span> km or <span id="distanceMiles"></span> miles)</div>
+
+          <div class="mt-12 text-sm text-left">
+            <hr class="mb-1">
+            Built by Greg Technology. <a href="https://www.patreon.com/gregtechnology" target="_blank">Support my work</a>!
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>
